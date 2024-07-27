@@ -1,0 +1,55 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.dens'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.commons:commons-lang3:3.14.0'
+    implementation 'org.slf4j:slf4j-api:2.0.13'
+    implementation 'io.qameta.allure:allure-junit-platform:2.27.0'
+    implementation 'com.github.automatedowl:allure-environment-writer:1.0.0'
+    implementation 'io.rest-assured:rest-assured:5.4.0'
+    implementation 'io.rest-assured:json-schema-validator:5.4.0'
+
+    implementation 'com.microsoft.playwright:playwright:1.43.0'
+    testImplementation 'io.cucumber:cucumber-bom:7.18.0'
+    implementation "io.cucumber:cucumber-java:7.18.0"
+    testImplementation "io.cucumber:cucumber-junit-platform-engine:7.18.0"
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.junit.platform:junit-platform-suite:1.10.3'
+
+    compileOnly 'org.projectlombok:lombok:1.18.32'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
+    testCompileOnly 'org.projectlombok:lombok:1.18.32'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.32'
+    testImplementation 'org.slf4j:slf4j-simple:2.0.13'
+    testImplementation 'io.rest-assured:rest-assured:5.4.0'
+    testImplementation 'io.qameta.allure:allure-cucumber7-jvm:2.27.0'
+}
+
+test {
+//    systemProperty("cucumber.junit-platform.naming-strategy", "long")
+//    systemProperties = System.getProperties() as Map<String, ?>
+//    def group = System.getProperty('group', 'regression')
+
+    useJUnitPlatform() {
+//        includeTags group
+    }
+}
+
+tasks.register('playwright', JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.microsoft.playwright.CLI'
+}
+
+wrapper {
+    gradleVersion("8.5")
+}
