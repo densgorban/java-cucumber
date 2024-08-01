@@ -1,6 +1,7 @@
 Feature: Currency API
   Test that verifies user GETs a list USD currency rates
 
+  @regression @api
   Scenario: Verify GET USD Currency rates
     Given I perform "GET" operation for "/USD"
 #    Then response status is 200
