@@ -6,7 +6,6 @@ import factory.DriverFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import utils.WebActions;
 
 import java.nio.file.Paths;
 
@@ -16,7 +15,8 @@ public class Hooks {
 
     @Before
     public void launchBrowser() {
-        String browserName = WebActions.getProperty("browser");
+//        String browserName = WebActions.getProperty("browser");
+        String browserName = "chrome";
         driverFactory = new DriverFactory();
         page = driverFactory.initDriver(browserName); // Passing browser name to launch the browser
     }

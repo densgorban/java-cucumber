@@ -1,0 +1,35 @@
+{
+  "name": "LoginPage",
+  "elements": {
+    "usernameField": {
+      "selector": "input[name='username']"
+    },
+    "passwordField": {
+      "selector": "input[name='password']"
+    },
+    "loginButton": {
+      "selector": "input[type='submit']"
+    }
+  },
+  "actions": {
+    "login": {
+      "parameters": ["username", "password"],
+      "steps": [
+        {
+          "action": "setValue",
+          "element": "usernameField",
+          "value": "{username}"
+        },
+        {
+          "action": "setValue",
+          "element": "passwordField",
+          "value": "{password}"
+        },
+        {
+          "action": "click",
+          "element": "loginButton"
+        }
+      ]
+    }
+  }
+}

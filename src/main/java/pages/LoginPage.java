@@ -2,44 +2,49 @@ package pages;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import io.qameta.allure.Allure;
+import io.qameta.allure.Step;
+import utam.core.framework.base.BaseRootPageObject;
 import utils.WebActions;
 
-public class LoginPage {
+import static java.lang.String.format;
+
+
+public class LoginPage extends BaseRootPageObject {
     private Page page;
     private final Locator USERNAME_EDITBOX;
     private final Locator PASSWORD_EDITBOX;
     private final Locator LOGIN_BUTTON;
-    private final Locator BOOKS_SEARCH_BOX;
 
     public LoginPage(Page page) {
         this.page = page;
-        this.USERNAME_EDITBOX = page.locator("#userName");
+        this.USERNAME_EDITBOX = page.locator("#username");
         this.PASSWORD_EDITBOX = page.locator("#password");
-        this.LOGIN_BUTTON = page.locator("#login");
-        this.BOOKS_SEARCH_BOX = page.getByPlaceholder("Type to search");
+        this.LOGIN_BUTTON = page.locator("#Login");
     }
 
     public void navigateToUrl(String url) {
-        this.page.navigate(WebActions.getProperty(url));
+        String realUrl = WebActions.getProperty(url);
+        Allure.step(format("Navigate to '%s'", realUrl));
+        this.page.navigate(realUrl);
     }
 
-    public void enterUsername(String username) {
-        USERNAME_EDITBOX.fill(WebActions.getProperty(username));
+    public void enterUsername(String role) {
+        String userName = WebActions.getProperty(role);
+        Allure.step(format("Set Username: %s", userName));
+        USERNAME_EDITBOX.fill(userName);
     }
 
     public void enterPassword(String password) {
-        PASSWORD_EDITBOX.fill(WebActions.decrypt(password));
+        String decryptedPassword = WebActions.decrypt(password);
+        Allure.step(format("Set Password: (decrypted): %s", decryptedPassword));
+        PASSWORD_EDITBOX.fill(decryptedPassword);
     }
 
+    @Step(value="Click Login")
     public void clickLogin() {
+        Allure.step("Click Login");
         LOGIN_BUTTON.click();
     }
 
-    public void clickOnIcon(String iconName) {
-        this.page.getByText(iconName, new Page.GetByTextOptions().setExact(true)).click();  // Clicks on the Exact text
-    }
-
-    public boolean verifyProfilePage() {
-        return WebActions.waitUntilElementDisplayed(this.BOOKS_SEARCH_BOX, 60);
-    }
 }

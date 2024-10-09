@@ -7,6 +7,7 @@ version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 dependencies {
@@ -21,6 +22,12 @@ dependencies {
     testImplementation 'io.cucumber:cucumber-bom:7.18.0'
     implementation "io.cucumber:cucumber-java:7.18.0"
     testImplementation "io.cucumber:cucumber-junit-platform-engine:7.18.0"
+    testImplementation "com.salesforce.utam:utam-core:3.0.2"
+    implementation 'com.salesforce.utam:utam-core:3.0.2'
+    implementation 'com.salesforce.utam:utam-java:3.0.2'
+    implementation 'com.salesforce.utam:utam-compiler:3.0.2'
+    implementation 'com.salesforce.utam:salesforce-pageobjects:8.0.0'
+
 
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
@@ -36,7 +43,8 @@ dependencies {
     testImplementation 'io.qameta.allure:allure-cucumber7-jvm'
     testImplementation "io.qameta.allure:allure-junit-platform"
 
-    testImplementation "io.qameta.allure:allure-cucumber7-jvm"
+
+
 }
 
 test {
