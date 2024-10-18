@@ -17,6 +17,9 @@ public class LoginSteps {
         loginPage.enterUsername("adminUsername");
         loginPage.enterPassword("adminPassword");
         loginPage.clickLogin();
+        loginPage.bypassLoginBlockers();
+
+
     }
 
 }

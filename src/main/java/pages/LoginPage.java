@@ -47,4 +47,9 @@ public class LoginPage extends BaseRootPageObject {
         LOGIN_BUTTON.click();
     }
 
+    public void bypassLoginBlockers() {
+        if(page.getByText("Register Your Mobile Phone").isVisible()) {
+            page.getByText("Remind Me Later").click();
+        }
+    }
 }

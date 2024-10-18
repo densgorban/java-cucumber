@@ -10,6 +10,7 @@ public class DriverFactory {
 
     public static ThreadLocal<Page> threadLocalDriver = new ThreadLocal<>(); //For Parallel execution
     public static ThreadLocal<BrowserContext> threadLocalContext = new ThreadLocal<>();
+    public static ThreadLocal<TestContext> testContext = new ThreadLocal<>();
 
     //Launches Browser as set by user in config file
     public Page initDriver(String browserName) {
@@ -37,6 +38,7 @@ public class DriverFactory {
         page = context.newPage();
         threadLocalDriver.set(page);
         threadLocalContext.set(context);
+        testContext.set(new TestContext());
         return page;
     }
 

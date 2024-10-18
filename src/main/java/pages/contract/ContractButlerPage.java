@@ -1,6 +1,5 @@
-package pages;
+package pages.contract;
 
-import com.google.common.base.Optional;
 import com.microsoft.playwright.Page;
 import factory.DriverFactory;
 import io.qameta.allure.Step;
@@ -19,7 +18,6 @@ public class ContractButlerPage {
         page.locator(format("one-app-nav-bar-item-root a[title='%s']", tabName)).click();
     }
 
-    @Step
     public void clickButton(String buttonName) {
         page.locator(format("li a[title='%s']", buttonName)).click();
     }
@@ -27,5 +25,9 @@ public class ContractButlerPage {
     public TemplateBuilder templateBuilder() {
         if(templateBuilder == null)  templateBuilder = new TemplateBuilder(page);
         return templateBuilder;
+    }
+
+    public TemplateView templateView() {
+        return new TemplateView(page);
     }
 }
