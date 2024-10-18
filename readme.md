@@ -12,7 +12,7 @@ Tech stack:
 
 Run tests:
 - with @tags
-```gradle test -Dcucumber.options="--tags @smoke"```
+```gradle test -Dcucumber.options="--tags @PDFButler"```
 - with Test runner
 ```gradle test -Dcucumber.options="src/test/resources/features/Parallel.feature"```
 - to see options help 
@@ -23,5 +23,10 @@ Run tests:
 ```allure generate```
 - run allure report
 ```allure serve ```
+
+Structure:
+- Application
+- - Folder
+- - - Test.feature
 
 

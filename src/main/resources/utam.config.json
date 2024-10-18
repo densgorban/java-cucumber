@@ -1,0 +1,24 @@
+{
+  "pageObjectsRootDir": "/src/main/resources/utam",
+  "pageObjectsFileMask": "(.*)\\.utam\\.json$",
+  "pageObjectsOutputDir": "/src/main/java/",
+  "resourcesOutputDir": "/src/main/resources",
+  "unitTestsOutputDir": "/src/test/java",
+  "unitTestsRunner": "JUNIT",
+  "namespaces": [
+    {
+      "typeMatch": "utam-lightning",
+      "pathMatch": ".*/lightning"
+    },
+    {
+      "typeMatch": "utam-custom",
+      "pathMatch": ".*/custom"
+    }
+  ],
+  "version": null,
+  "copyright": null,
+  "module": "whatisthis",
+  "profiles": null,
+  "lintingOutputFile": "utam-lint.sarif",
+  "lint": null
+}
