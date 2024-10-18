@@ -11,7 +11,7 @@ import static java.lang.String.format;
 
 
 public class LoginPage extends BaseRootPageObject {
-    private Page page;
+    private final Page page;
     private final Locator USERNAME_EDITBOX;
     private final Locator PASSWORD_EDITBOX;
     private final Locator LOGIN_BUTTON;

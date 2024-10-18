@@ -23,6 +23,8 @@ public class ContractItem {
         actionPanel.locator("div.contract-item__edit-panel-line").click();
         return new ContractItemActionEdit(root);
     }
+
+    //todo: implement remove wrapper
     public ContractItemActionEdit remove() {
         actionPanel.hover();
         actionPanel.locator("div.contract-item__remove-panel-line").click();

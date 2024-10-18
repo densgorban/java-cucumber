@@ -5,7 +5,7 @@ import com.microsoft.playwright.Locator;
 class ContractItemActionEdit {
 
     private final Locator itemRoot;
-    private Locator textEditor;
+    private final Locator textEditor;
 
     public ContractItemActionEdit(Locator root) {
         this.itemRoot = root;

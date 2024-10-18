@@ -9,8 +9,8 @@ import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertTha
 import static java.lang.String.format;
 
 public class TemplateView {
-    private Page page;
-    private Locator TABLE_ROOT;
+    private final Page page;
+    private final Locator TABLE_ROOT;
 
     public TemplateView(Page page) {
         this.page = page;

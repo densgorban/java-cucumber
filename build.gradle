@@ -59,7 +59,7 @@ tasks.register('playwright', JavaExec) {
     mainClass = 'com.microsoft.playwright.CLI'
 }
 
-task generateUTAMPageObjects(type: JavaExec) {
+task utam(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     mainClass = 'utam.compiler.EntryPoint'
     jvmArgs += [

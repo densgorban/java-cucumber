@@ -23,6 +23,8 @@ Run tests:
 ```allure generate```
 - run allure report
 ```allure serve ```
+- generate UTAM page objects:
+```gradle utam```
 
 Structure:
 - Application

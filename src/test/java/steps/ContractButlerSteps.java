@@ -15,7 +15,7 @@ import static org.hamcrest.Matchers.hasItem;
 @Slf4j
 public class ContractButlerSteps {
 
-    private ContractButlerPage cbPage = new ContractButlerPage();
+    private final ContractButlerPage cbPage = new ContractButlerPage();
 
     @When("I open {string} tab")
     @And("I return to {string} tab")
@@ -44,9 +44,10 @@ public class ContractButlerSteps {
     @And("I add clause")
     public void addClause() {
         cbPage.templateBuilder().addClause(
-                "CLOUDCROSSING REFERENCES TO SUBSCRIBER:\n" +
-                        "Upon execution of this Agreement, CloudCrossing may make references to Subscriber and Subscriber's URL and may use Subscriber's designated trademark and logo for publication on PDF Butler's current list of subscribers located on the PDF Butler Site.\n" +
-                        "PDF Butler may also respond to any inquiry regarding whether Subscriber is a licensee and user of the Services. You can also choose not to have your logo published. This entails a 15% surcharge on the license cost.",
+                """
+                        CLOUDCROSSING REFERENCES TO SUBSCRIBER:
+                        Upon execution of this Agreement, CloudCrossing may make references to Subscriber and Subscriber's URL and may use Subscriber's designated trademark and logo for publication on PDF Butler's current list of subscribers located on the PDF Butler Site.
+                        PDF Butler may also respond to any inquiry regarding whether Subscriber is a licensee and user of the Services. You can also choose not to have your logo published. This entails a 15% surcharge on the license cost.""",
                 "[[!CLOUDCROSSING!]]");
 //        cbPage.templateBuilder().addClause(
 //                "PDF BUTLER PROPRIETY INFORMATION:\n" +

@@ -1,7 +1,6 @@
 package factory;
 
 import com.microsoft.playwright.*;
-import utils.WebActions;
 
 public class DriverFactory {
     public Browser browser;
