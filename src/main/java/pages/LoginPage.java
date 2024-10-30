@@ -24,13 +24,13 @@ public class LoginPage extends BaseRootPageObject {
     }
 
     public void navigateToUrl(String url) {
-        String realUrl = WebActions.getProperty(url);
+        String realUrl = WebActions.decrypt(url);
         Allure.step(format("Navigate to '%s'", realUrl));
         this.page.navigate(realUrl);
     }
 
     public void enterUsername(String role) {
-        String userName = WebActions.getProperty(role);
+        String userName = WebActions.decrypt(role);
         Allure.step(format("Set Username: %s", userName));
         USERNAME_EDITBOX.fill(userName);
     }

@@ -11,7 +11,7 @@ public class OpportunitySteps {
     @Given("I open opportunity")
     public void openOpportunity() {
         opportunityPage = new OpportunityPage(DriverFactory.getPage());
-        opportunityPage.openOpportunity("United Oil Refinery Generators");
+        opportunityPage.openOpportunity("PDFButler for Solvay S.A.");
     }
     @Given("I create new Agreement")
     public void createNewAgreement() {

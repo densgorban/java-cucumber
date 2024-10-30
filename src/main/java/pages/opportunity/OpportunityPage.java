@@ -20,7 +20,7 @@ public class OpportunityPage {
     }
 
     public CreateContractModalPopup createNewAgreement() {
-        page.locator("button").getByText("Create Contract Instance").click();
-        return new CreateContractModalPopup(page.locator("div[aria-label='Create Contract Instance']"));
+        page.locator("button").getByText("Create Agreement").click();
+        return new CreateContractModalPopup(page.locator("div[aria-label='Create Agreement']"));
     }
 }
