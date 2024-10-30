@@ -11,10 +11,7 @@ Feature: Contract Butler Contract Agreement
   Scenario:
     When I open 'Opportunities' tab
     And I open opportunity
-#    And I create new Agreement
-#    And I set Agreement fields:
-#    | name | aa |bb|
-#    | a    | b  |c |
+    And I create new Agreement
 #    And I click on create Template
 #    And Wait for Success popup
 #    And I can see Agreement editing view

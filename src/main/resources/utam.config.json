@@ -17,7 +17,7 @@
   ],
   "version": null,
   "copyright": null,
-  "module": "whatisthis",
+  "module": null,
   "profiles": null,
   "lintingOutputFile": "utam-lint.sarif",
   "lint": null

@@ -27,8 +27,8 @@ Run tests:
 ```gradle utam```
 
 Structure:
-- Application
-- - Folder
+- Application (ContractButler, PDFButler)
+- - Folder (Template, Agreement, Opportunity)
 - - - Test.feature
 
 
