@@ -4,6 +4,8 @@ import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import pages.contract.CreateContractModalPopup;
 
+import static java.lang.String.format;
+
 public class OpportunityPage {
 
     private final Page page;
@@ -15,7 +17,7 @@ public class OpportunityPage {
     }
 
     public OpportunityPage openOpportunity(String opportunityTitle) {
-        root.locator("a").getByText(opportunityTitle).click();
+        root.locator(format("a[title='%s']", opportunityTitle)).click();
         return this;
     }
 

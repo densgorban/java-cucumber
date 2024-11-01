@@ -16,6 +16,7 @@ public class OpportunitySteps {
     @Given("I create new Agreement")
     public void createNewAgreement() {
         opportunityPage.createNewAgreement()
+                .setField("Contract Start Date", "31-Oct-2024")
                 .setField("Contract status", "Draft")
                 .setField("Template", "End-user subscription agreement v3")
                 .createContractInstance();

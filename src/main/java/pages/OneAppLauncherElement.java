@@ -16,6 +16,7 @@ public class OneAppLauncherElement {
 
     public void selectApplication(String application) {
         page.locator("one-app-launcher-header button").click();
+        page.locator("input[placeholder='Search apps and items...']").fill(application);
         page.locator(format("one-app-launcher-menu-item a[data-label='%s']", application)).click();
     }
 }
