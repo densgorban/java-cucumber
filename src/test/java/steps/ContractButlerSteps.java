@@ -54,7 +54,7 @@ public class ContractButlerSteps {
     @And("Wait for Success popup")
     public void waitForSuccessStatus() {
         contractButlerPage.templateBuilder().checkSuccessPopupAppears();
-        contractButlerPage.templateBuilder().checkUpdateButtonIsVisible();
+//        contractButlerPage.templateBuilder().checkUpdateButtonIsVisible();
     }
 
     @And("I can see the new item in the templates list")

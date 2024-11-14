@@ -31,4 +31,13 @@ Structure:
 - - Folder (Template, Agreement, Opportunity)
 - - - Test.feature
 
+#env1 = pdfbuttler
+#sales.userName
+#env1 = pdfbuttler
+#sales.password
+#approver.userName = Luke White
+#approver.password
+#org??
+#????? Logo Use
+
 

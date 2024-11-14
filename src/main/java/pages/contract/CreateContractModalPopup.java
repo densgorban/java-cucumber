@@ -10,16 +10,35 @@ public class CreateContractModalPopup {
 
     public CreateContractModalPopup(Locator root) {
         this.root = root;
+        root.getByText("Create Agreement").isVisible();
     }
 
-    public CreateContractModalPopup setField(String fieldLabel, String option) {
+    public CreateContractModalPopup setDropdownField(String fieldLabel, String option) {
         Locator fieldLocator = root.locator(format("flowruntime-screen-field:has-text('%s')", fieldLabel));
-        fieldLocator.locator("input").click();
-        fieldLocator.getByText(option).click();
+        if (fieldLocator.isVisible()) {
+            fieldLocator.locator("input").click();
+            fieldLocator.getByText(option).click();
+        }
         return this;
     }
 
-    public void createContractInstance() {
-        root.locator("button").getByText("Create Contract Instance").click();
+    public CreateContractModalPopup setTextField(String fieldLabel, String text) {
+        Locator fieldLocator = root.locator(format("flowruntime-screen-field:has-text('%s')", fieldLabel));
+        if (fieldLocator.isVisible()) {
+            fieldLocator.locator("input").fill(text);
+        }
+        return this;
+    }
+
+    public CreateContractModalPopup setCalendarField(String fieldLabel, String option) {
+        Locator fieldLocator = root.locator(format("flowruntime-screen-field:has-text('%s')", fieldLabel));
+        if (fieldLocator.isVisible())
+            fieldLocator.locator("input").fill(option);
+        return this;
+    }
+
+    public CreateContractModalPopup createContractInstance() {
+        root.locator("button").getByText("Create Contract").click();
+        return this;
     }
 }

@@ -2,6 +2,7 @@ package pages.opportunity;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import pages.contract.ContractEditPanel;
 import pages.contract.CreateContractModalPopup;
 
 import static java.lang.String.format;
@@ -24,5 +25,9 @@ public class OpportunityPage {
     public CreateContractModalPopup createNewAgreement() {
         page.locator("button").getByText("Create Agreement").click();
         return new CreateContractModalPopup(page.locator("div[aria-label='Create Agreement']"));
+    }
+
+    public ContractEditPanel agreementEditPage() {
+        return new ContractEditPanel();
     }
 }

@@ -12,12 +12,9 @@ Feature: Contract Butler Contract Agreement
     When I open 'Opportunities' tab
     And I open opportunity
     And I create new Agreement
-#    And I click on create Template
-#    And Wait for Success popup
-#    And I can see Agreement editing view
-#    And I save agreement
-#    And I login in another tab as 'approver' user
+    And I can see Agreement editing view
+    And I Submit Agreement for Approval
+    And I Approve using Approval Records
 #    And Approves the new Agreement
-#    Then I can see the new item in the templates list
 
 
