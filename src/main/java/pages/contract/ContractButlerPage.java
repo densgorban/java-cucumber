@@ -13,7 +13,6 @@ public class ContractButlerPage {
     Page page = DriverFactory.getPage();
     TemplateBuilder templateBuilder;
 
-    @Step
     public void selectTab(String tabName) {
         page.locator(format("one-app-nav-bar-item-root a[title='%s']", tabName)).click();
     }

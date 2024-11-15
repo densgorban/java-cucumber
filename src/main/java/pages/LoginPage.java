@@ -36,12 +36,10 @@ public class LoginPage extends BaseRootPageObject {
     }
 
     public void enterPassword(String password) {
-        String decryptedPassword = WebActions.decrypt(password);
-        Allure.step(format("Set Password: (decrypted): %s", decryptedPassword));
-        PASSWORD_EDITBOX.fill(decryptedPassword);
+        Allure.step(format("Set Password: (decrypted): %s", password));
+        PASSWORD_EDITBOX.fill(WebActions.decrypt(password));
     }
 
-    @Step(value="Click Login")
     public void clickLogin() {
         Allure.step("Click Login");
         LOGIN_BUTTON.click();
