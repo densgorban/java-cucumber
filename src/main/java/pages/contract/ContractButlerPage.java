@@ -1,8 +1,8 @@
 package pages.contract;
 
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import factory.DriverFactory;
-import io.qameta.allure.Step;
 import lombok.extern.slf4j.Slf4j;
 
 import static java.lang.String.format;
@@ -13,8 +13,11 @@ public class ContractButlerPage {
     Page page = DriverFactory.getPage();
     TemplateBuilder templateBuilder;
 
-    public void selectTab(String tabName) {
-        page.locator(format("one-app-nav-bar-item-root a[title='%s']", tabName)).click();
+    public ContractButlerPage selectTab(String tabName) {
+        Locator locator = page.locator(format("one-app-nav-bar-item-root a[title='%s']", tabName));
+        locator.hover();
+        locator.click();
+        return this;
     }
 
     public void clickButton(String buttonName) {
@@ -29,4 +32,8 @@ public class ContractButlerPage {
     public TemplateView templateView() {
         return new TemplateView(page);
     }
+    public AgreementView agreementView() {
+        return new AgreementView(page);
+    }
+
 }

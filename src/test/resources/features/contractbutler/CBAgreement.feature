@@ -15,6 +15,6 @@ Feature: Contract Butler Contract Agreement
     And I can see Agreement editing view
     And I Submit Agreement for Approval
     And I Approve using Approval Records
-#    And Approves the new Agreement
+    Then Agreement is visible in Agreements tab with status 'Active'
 
 

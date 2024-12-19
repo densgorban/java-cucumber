@@ -25,6 +25,7 @@ public class ContractEditPanel {
         assertThat(root.locator("div.title")).containsText(expectedName);
         return this;
     }
+
     public ContractItemActionTag tag() {
         return new ContractItemActionTag(root.page().locator("lightning-modal"));
     }
@@ -35,15 +36,17 @@ public class ContractEditPanel {
     }
 
     public void approveUsingApprovalRecord() {
-        root.locator("button.button-menu").click();
+        Locator hiddenButtonsMenu = root.locator("div button.button-menu");
+        hiddenButtonsMenu.hover();
+        hiddenButtonsMenu.click();
         root.locator("div.dropdown").getByText("Open Approval Record").click();
-        DriverFactory.getPage()
-                .locator("one-app-nav-bar-item-root")
-                .all()
-                .stream().filter(l -> l.innerText().contains("Approval"))
-                .findFirst()
-                .get()
-                .click();
+//        DriverFactory.getPage()
+//                .locator("one-app-nav-bar-item-root")
+//                .all()
+//                .stream().filter(l -> l.innerText().contains("Approval"))
+//                .findFirst()
+//                .get()
+//                .click();
         DriverFactory.getPage()
                 .locator("a[role='button']")
                 .locator("div[title='Approve']")
@@ -53,7 +56,7 @@ public class ContractEditPanel {
                 .locator("textarea.inputTextArea")
                 .fill("Approved " + System.currentTimeMillis());
         DriverFactory.getPage()
-                .locator("div.modal-container")
+                .locator("div.forceModalActionContainer")
                 .getByText("Approve")
                 .click();
     }

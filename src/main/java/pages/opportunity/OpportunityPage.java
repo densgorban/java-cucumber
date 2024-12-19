@@ -5,6 +5,7 @@ import com.microsoft.playwright.Page;
 import pages.contract.ContractEditPanel;
 import pages.contract.CreateContractModalPopup;
 
+import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import static java.lang.String.format;
 
 public class OpportunityPage {
@@ -29,5 +30,15 @@ public class OpportunityPage {
 
     public ContractEditPanel agreementEditPage() {
         return new ContractEditPanel();
+    }
+
+    public void checkOpportunityStage(String expectedStageName) {
+        Locator subheader = page.locator("slot[name='subheader']");
+        assertThat(subheader)
+                .isVisible();
+        assertThat(subheader.locator("li.slds-is-current"))
+                .containsText(expectedStageName);
+
+
     }
 }

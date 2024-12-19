@@ -3,7 +3,6 @@ package pages;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import io.qameta.allure.Allure;
-import io.qameta.allure.Step;
 import utam.core.framework.base.BaseRootPageObject;
 import utils.WebActions;
 

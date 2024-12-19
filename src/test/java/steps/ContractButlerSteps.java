@@ -1,8 +1,10 @@
 package steps;
 
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lombok.extern.slf4j.Slf4j;
+import pages.contract.AgreementView;
 import pages.contract.ContractButlerPage;
 
 import java.util.List;
@@ -66,6 +68,18 @@ public class ContractButlerSteps {
                 .templateNames();
         log.info("Templates: " + actualTemplates);
         assertThat(actualTemplates, hasItem(templateName));
+    }
+
+    @Then("Agreement is visible in Agreements tab with status {string}")
+    public void checkAgreementStatus(String status) {
+        AgreementView agreementView = contractButlerPage
+                .selectTab("Agreements")
+                .agreementView();
+        String agreementName = testContext.get().data.get(CONTRACT_NAME);
+        assertThat("Agreement List contains name",
+                agreementView.agreementNames().contains(agreementName));
+        agreementView.tableContainsAgreement(agreementName);
+
     }
 
 }

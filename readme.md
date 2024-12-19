@@ -1,5 +1,3 @@
-
-
 Tech stack:
 - Java 21
 - Gradle
@@ -7,14 +5,22 @@ Tech stack:
 - Cucumber
 - Allure 2
 - Playwright
-- Retrofit
+
+Requirements:
+1. Install Java (latest) https://www.java.com/download/ie_manual.jsp
+2. Install gradle https://gradle.org/install/
+3. Clone project from 
+```git clone https://github.com/densgorban/java-cucumber.git```
+4. Run tests in commandline
+```./gradlew test --tests "testrunner.CucumberTests"```
+5. Generate Report
+```allure serve ```
 
 
 Run tests:
+- Run tests in IntelliJ IDE
 - with @tags
-```gradle test -Dcucumber.options="--tags @PDFButler"```
-- with Test runner
-```gradle test -Dcucumber.options="src/test/resources/features/Parallel.feature"```
+```./gradlew test --tests "testrunner.CucumberTests"```
 - to see options help 
 ```gradle test -Dcucumber.options="--help"```
 - to run with gradlew
@@ -26,18 +32,6 @@ Run tests:
 - generate UTAM page objects:
 ```gradle utam```
 
-Structure:
-- Application (ContractButler, PDFButler)
-- - Folder (Template, Agreement, Opportunity)
-- - - Test.feature
 
-#env1 = pdfbuttler
-#sales.userName
-#env1 = pdfbuttler
-#sales.password
-#approver.userName = Luke White
-#approver.password
-#org??
-#????? Logo Use
 
 
